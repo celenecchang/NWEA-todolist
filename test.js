@@ -45,8 +45,9 @@ describe('listFuncs', () =>{
     expect(list.markDone(index)).toEqual(marked);
   })
 
+  //how do you test a console log????
   it('should print list and include item and item status', () => {
-    return 0
+    
   })
 
   //checks if item length has increased and item has been added to the end of the list
@@ -65,17 +66,22 @@ describe('listFuncs', () =>{
   it('should remove item from the list', () => {
     const listLength = list.content.length;
     const index = 2;
-    const removed = list.content.at(2)
+    const removed = list.content.at(2);
    
     expect(list.removeItem(index)[0]).toEqual(removed);
     expect(list.content.length).toEqual(listLength-1);
 
   })
 
+  //returns newly arranged list
   it('should move an item on the list from one place to another', () => {
-    return 0
+    const list = new List ([new Item('eat'), new Item('sleep'), new Item('work')]);
+    const moveList = new List ([new Item('sleep'), new Item('eat'), new Item('work')]);
+
+    expect(list.moveItem(0,1)).toEqual(moveList.content);
   })
 
+  
   it('should remove all items from the list', () => {
     const emptyArr = [];
 

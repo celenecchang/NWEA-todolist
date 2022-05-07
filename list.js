@@ -1,3 +1,5 @@
+const { throwStatement } = require("@babel/types");
+
 class List {
 
 constructor (arr) {
@@ -21,8 +23,9 @@ constructor (arr) {
    return this.content[index];
   }
 
+  //logs list onto the console??
   printList() {
-    
+    console.log(this.content);
   }
 
   addItem(str) {
@@ -35,8 +38,11 @@ constructor (arr) {
     return this.content.splice(index, 1);
   }
 
-  moveItem() {
 
+  moveItem(initial, destination) {
+    let item= this.content.splice(initial, 1);
+    this.content.splice(destination, 0, item[0]);
+    return this.content;
   }
 
   clearList() {

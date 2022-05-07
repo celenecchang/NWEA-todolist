@@ -1,7 +1,7 @@
 class List {
 
 constructor (arr) {
-  this.list = arr
+  this.content = arr
 }
 
   sortAsc(){
@@ -9,7 +9,7 @@ constructor (arr) {
   }
 
   sortDesc(){
-
+   
   }
 
   sortNotDone(){
@@ -24,8 +24,9 @@ constructor (arr) {
     
   }
 
-  addItem(){
-
+  addItem(str){
+    this.content.push(new Item(str));
+    return this.content
   }
 
   removeItem(){

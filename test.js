@@ -22,13 +22,13 @@ describe('listFuncs', () =>{
 
   it('should sort list in ascending order', () => {
     //objs are passed by reference, so we can deep clone it first in order to not mutate it
-    let listBeforeSort = JSON.parse(JSON.stringify(list));
+    const listBeforeSort = JSON.parse(JSON.stringify(list));
     expect(list.sortAsc()).toEqual(listBeforeSort);
   })
 
   it('should sort list in descending order', () => {
-    let listBeforeSort = JSON.parse(JSON.stringify(list));
-    expect(list.sortDesc()).toEqual(listBeforeSort.list.reverse());
+    const listBeforeSort = JSON.parse(JSON.stringify(list));
+    expect(list.sortDesc()).toEqual(listBeforeSort.content.reverse());
   })
 
   it('should sort list in ascending order with all tasks not done first', () =>{
@@ -43,12 +43,26 @@ describe('listFuncs', () =>{
     return 0
   })
 
+  //checks if item length has increased and item has been added to the end of the list
+  //b/c return list after item has been added, output is an arr
   it('should add an item to the list', () => {
-    return 0
+
+    //copy of original list length
+    const listLength = list.content.length;
+    const task = 'eat dinner';
+
+    expect(list.addItem(task).length).toEqual(listLength+1);
+    expect(list.content.at(-1).task).toEqual(task);
   })
 
+  //return deleted item, so output is the deleted item obj
   it('should remove item from the list', () => {
-    return 0
+    const listLength = list.content.length;
+    const index = list.content[2]
+    const removed = 'study'
+
+    expect(list.removeItem().length).toEqual(listLength-1)
+    expect(list.removeItem(index)).toEqual(removed);
   })
 
   it('should move an item on the list from one palce to another', () => {

@@ -29,8 +29,8 @@ constructor (arr) {
     return this.content
   }
 
-  removeItem(){
-
+  removeItem(index){
+    this.content.splice(index, 1)
   }
 
   moveItem(){

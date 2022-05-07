@@ -2,13 +2,15 @@ const { throwStatement } = require("@babel/types");
 
 class List {
 
-constructor (arr) {
-  this.content = arr
+constructor () { //arr = undefined
+  this.content = [];
+  this.counter = 0;
 };
 
-  sortAsc() {
 
-  }
+  sortAsc() {
+    return this.content.sort((a,b) => a.id-b.id);
+  }  
 
   sortDesc() {
    
@@ -28,8 +30,9 @@ constructor (arr) {
     console.log(this.content);
   }
 
+  //index prop within obj will start by 1 when new Item is created b/c of prefix incrementor
   addItem(str) {
-    this.content.push(new Item(str));
+    this.content.push(new Item(str, ++this.counter));
     return this.content;
   }
 
@@ -55,9 +58,10 @@ constructor (arr) {
 
 class Item {
 
-  constructor (task) {
-    this.done = false
-    this.task = task
+  constructor (task, i) {
+    this.done = false;
+    this.task = task;
+    this.id = i;
   }
 };
 

@@ -8,22 +8,19 @@ describe('listFuncs', () =>{
   let list;
 
   beforeEach(() => {
-    list = new List([new Item('buy groceries'), 
-    new Item('exercise'), 
-    new Item('walk dogs'), 
-    new Item('study'), 
-    new Item('wash car'), 
-    new Item('make doctors appt'),
-    new Item('order flowers'),
-    new Item('make dinner reservation'),
-    new Item('buy medicine') 
- ]);
+    list = new List();
+    list.addItem('buy groceries');
+    list.addItem('exercise');
+    list.addItem('walk dogs');
+    list.addItem('study');
+    list.addItem('wash car'); 
+    list.addItem('make doctors appt');
 })
 
   it('should sort list in ascending order', () => {
     //objs are passed by reference, so we can deep clone it first in order to not mutate it
     const listBeforeSort = JSON.parse(JSON.stringify(list));
-    expect(list.sortAsc()).toEqual(listBeforeSort);
+    expect(list.sortAsc()).toEqual(listBeforeSort.content); 
   })
 
   it('should sort list in descending order', () => {
@@ -32,7 +29,10 @@ describe('listFuncs', () =>{
   })
 
   it('should sort list in ascending order with all tasks not done first', () =>{
-    return 0
+    const list = new List ([{task:'eat', done: false}, {task:'sleep', done: true}, {task:'work', done: false}]);
+    const sortIncomplete = new List ([{task:'eat', done: false}, {task:'work', done: false}, {task:'sleep', done: true}]);
+
+    expect(list.sortNotDone()).toEqual(sortIncomplete.content);
   })
 
   //markDone method returns a boolean

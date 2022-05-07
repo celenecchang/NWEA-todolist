@@ -2,22 +2,34 @@ const { throwStatement } = require("@babel/types");
 
 class List {
 
-constructor () { //arr = undefined
-  this.content = [];
-  this.counter = 0;
+constructor (arr = []) {
+  this.content = arr;
+  this.counter = arr.length;
 };
 
 
+  // sort List elements, and then access id of the obj by using . notation
   sortAsc() {
     return this.content.sort((a,b) => a.id-b.id);
   }  
 
   sortDesc() {
-   
+    return this.content.sort((a,b) => b.id-a.id);
   }
 
   sortNotDone() {
-
+    const arr1 =[];
+    const arr2 =[];
+    for(let i = 0; i<this.content.length; i++){
+      if(this.content[i].done === true){
+        arr1.push(this.content[i]);
+        this.content.sort((a,b) => a.id-b.id);
+      }else{
+        arr2.push(this.content[i]);
+        this.content.sort((a,b) => a.id-b.id);
+      }
+    }
+    return arr2.concat(arr1);
   }
 
   markDone(index) {

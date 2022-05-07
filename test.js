@@ -29,8 +29,8 @@ describe('listFuncs', () =>{
   })
 
   it('should sort list in ascending order with all tasks not done first', () =>{
-    const list = new List ([{task:'eat', done: false}, {task:'sleep', done: true}, {task:'work', done: false}]);
-    const sortIncomplete = new List ([{task:'eat', done: false}, {task:'work', done: false}, {task:'sleep', done: true}]);
+    const list = new List ([{task:'eat', done: false, id: 0}, {task:'sleep', done: true, id: 2}, {task:'work', done: false, id: 1}]);
+    const sortIncomplete = new List ([{task:'eat', done: false, id: 0}, {task:'work', done: false, id: 1}, {task:'sleep', done: true, id: 2}]);
 
     expect(list.sortNotDone()).toEqual(sortIncomplete.content);
   })
@@ -45,10 +45,10 @@ describe('listFuncs', () =>{
     expect(list.markDone(index)).toEqual(marked);
   })
 
-  //how do you test a console log????
-  it('should print list and include item and item status', () => {
+
+  // xit('should print list and include item and item status', () => {
     
-  })
+  // })
 
   //checks if item length has increased and item has been added to the end of the list
   //b/c return list after item has been added, output is an arr

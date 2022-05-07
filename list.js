@@ -4,41 +4,43 @@ constructor (arr) {
   this.content = arr
 }
 
-  sortAsc(){
+  sortAsc() {
 
   }
 
-  sortDesc(){
+  sortDesc() {
    
   }
 
-  sortNotDone(){
+  sortNotDone() {
 
   }
 
-  markDone(){
+  markDone() {
 
   }
 
-  printList(){
+  printList() {
     
   }
 
-  addItem(str){
+  addItem(str) {
     this.content.push(new Item(str));
+    return this.content;
+  }
+
+  //inefficient b/c of time complexity 
+  removeItem(index) {
+    return this.content.splice(index, 1);
+  }
+
+  moveItem() {
+
+  }
+
+  clearList() {
+    this.content.length = 0
     return this.content
-  }
-
-  removeItem(index){
-    this.content.splice(index, 1)
-  }
-
-  moveItem(){
-
-  }
-
-  clearList(){
-
   }
 
 }

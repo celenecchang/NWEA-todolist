@@ -58,11 +58,12 @@ describe('listFuncs', () =>{
   //return deleted item, so output is the deleted item obj
   it('should remove item from the list', () => {
     const listLength = list.content.length;
-    const index = list.content[2]
-    const removed = 'study'
+    const index = 2;
+    const removed = list.content.at(2)
+   
+    expect(list.removeItem(index)[0]).toEqual(removed);
+    expect(list.content.length).toEqual(listLength-1);
 
-    expect(list.removeItem().length).toEqual(listLength-1)
-    expect(list.removeItem(index)).toEqual(removed);
   })
 
   it('should move an item on the list from one palce to another', () => {
@@ -70,6 +71,8 @@ describe('listFuncs', () =>{
   })
 
   it('should remove all items from the list', () => {
-    return 0
+    const emptyArr = []
+
+    expect(list.clearList()).toEqual(emptyArr);
   })
 });

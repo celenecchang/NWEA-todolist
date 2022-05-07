@@ -2,7 +2,7 @@ class List {
 
 constructor (arr) {
   this.content = arr
-}
+};
 
   sortAsc() {
 
@@ -16,8 +16,9 @@ constructor (arr) {
 
   }
 
-  markDone() {
-
+  markDone(index) {
+   this.content[index].done = true;
+   return this.content[index];
   }
 
   printList() {
@@ -39,11 +40,11 @@ constructor (arr) {
   }
 
   clearList() {
-    this.content.length = 0
-    return this.content
+    this.content.length = 0;
+    return this.content;
   }
 
-}
+};
 
 
 class Item {
@@ -52,6 +53,6 @@ class Item {
     this.done = false
     this.task = task
   }
-}
+};
 
-module.exports = {List, Item}
+module.exports = {List, Item};

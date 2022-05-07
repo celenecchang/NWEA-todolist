@@ -35,8 +35,14 @@ describe('listFuncs', () =>{
     return 0
   })
 
+  //markDone method returns a boolean
+  //returns the marked task
   it('should mark a task as done', () => {
-    return 0
+    const index = 3;
+    const marked= list.content.at(3);
+
+    expect(list.markDone(index).done).toEqual(true);
+    expect(list.markDone(index)).toEqual(marked);
   })
 
   it('should print list and include item and item status', () => {
@@ -55,7 +61,7 @@ describe('listFuncs', () =>{
     expect(list.content.at(-1).task).toEqual(task);
   })
 
-  //return deleted item, so output is the deleted item obj
+  //returns deleted item, so output is the deleted item obj
   it('should remove item from the list', () => {
     const listLength = list.content.length;
     const index = 2;
@@ -66,12 +72,12 @@ describe('listFuncs', () =>{
 
   })
 
-  it('should move an item on the list from one palce to another', () => {
+  it('should move an item on the list from one place to another', () => {
     return 0
   })
 
   it('should remove all items from the list', () => {
-    const emptyArr = []
+    const emptyArr = [];
 
     expect(list.clearList()).toEqual(emptyArr);
   })

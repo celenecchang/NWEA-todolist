@@ -59,6 +59,8 @@ describe('listFuncs', () =>{
     const task = 'eat dinner';
 
     expect(list.addItem(task).length).toEqual(listLength+1);
+
+    //checks if item added to list was added at the end
     expect(list.content.at(-1).task).toEqual(task);
   })
 

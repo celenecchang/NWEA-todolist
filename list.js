@@ -1,4 +1,11 @@
-const { throwStatement } = require("@babel/types");
+class Item {
+
+  constructor (task, i) {
+    this.done = false;
+    this.task = task;
+    this.id = i;
+  }
+};
 
 class List {
 
@@ -23,13 +30,14 @@ constructor (arr = []) {
     for(let i = 0; i<this.content.length; i++){
       if(this.content[i].done === true){
         arr1.push(this.content[i]);
-        this.content.sort((a,b) => a.id-b.id);
+        arr1.sort((a,b) => a.id-b.id);
       }else{
         arr2.push(this.content[i]);
-        this.content.sort((a,b) => a.id-b.id);
+        arr2.sort((a,b) => a.id-b.id);
       }
     }
-    return arr2.concat(arr1);
+    this.content = arr2.concat(arr1)
+    return this.content;
   }
 
   markDone(index) {
@@ -37,14 +45,14 @@ constructor (arr = []) {
    return this.content[index];
   }
 
-  //logs list onto the console??
+  //logs list onto the console
   printList() {
     console.log(this.content);
   }
 
   //index prop within obj will start by 1 when new Item is created b/c of prefix incrementor
   addItem(str) {
-    this.content.push(new Item(str, ++this.counter));
+    this.content.push(new Item(str, ++this.counter)); 
     return this.content;
   }
 
@@ -53,9 +61,9 @@ constructor (arr = []) {
     return this.content.splice(index, 1);
   }
 
-
+  
   moveItem(initial, destination) {
-    let item= this.content.splice(initial, 1);
+    let item = this.content.splice(initial, 1);
     this.content.splice(destination, 0, item[0]);
     return this.content;
   }
@@ -65,16 +73,6 @@ constructor (arr = []) {
     return this.content;
   }
 
-};
-
-
-class Item {
-
-  constructor (task, i) {
-    this.done = false;
-    this.task = task;
-    this.id = i;
-  }
 };
 
 module.exports = {List, Item};

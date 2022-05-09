@@ -64,7 +64,7 @@ describe('listFuncs', () =>{
     expect(list.content.at(-1).task).toEqual(task);
   })
 
-  //returns deleted item, so output is the deleted item obj
+  //returns deleted item, output: deleted item obj
   it('should remove item from the list', () => {
     const listLength = list.content.length;
     const index = 2;

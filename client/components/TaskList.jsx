@@ -4,9 +4,8 @@ import {List} from '../../list.js';
 
 const TaskList = (props) =>{
 
-
   //converting each element in the list arr into a compoent
-  const todo = props.tasks.content.map((item, index) => <Task 
+  const todo = props.tasks.content.map((item, index) => <Task
   item = {item.task} 
   complete = {item.done} 
   setObj = {props.setObj}
@@ -21,7 +20,7 @@ const TaskList = (props) =>{
   }}
   />)
   return (
-  <div id = 'task-container'>
+  <div id = 'taskContainer'>
     {
       todo
     }

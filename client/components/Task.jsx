@@ -4,12 +4,9 @@ const Task = (props) =>{
   
   return (
     <div className = 'tasks'>
-
-       <button className = "mark-done" onClick={props.markDone}>Done</button>
-      <div>
+        <button id = "markDone" onClick={props.markDone}>Done</button>
         <p>{props.item}</p>
-        <button className ='delete-button' onClick={props.delete}>X</button>
-      </div>
+        <button id ='deleteButton' onClick={props.delete}>X</button>
     </div>
   )
 }

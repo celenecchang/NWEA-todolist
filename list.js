@@ -56,7 +56,6 @@ constructor (arr = []) {
     return this.content;
   }
 
-  //inefficient b/c of time complexity 
   removeItem(index) {
     return this.content.splice(index, 1);
   }

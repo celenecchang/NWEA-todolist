@@ -13,18 +13,18 @@ const AddTask = (props) =>{
     props.setObj(Object.assign(Object.create(List.prototype), props.tasks));
   }
 
-  return(
-    <div id= "task-box">
-      <h1>TO DO LIST</h1>
-        <input type = 'text'
-          id = "input-box"
+  return( 
+    <div id = "addTasks">
+      <div id = "title">To Do List</div>
+        <input  id = "inputBox"
+        type = "text"
         />
-        <button className = "t-buttons" onClick={()=>todo('addItem', document.querySelector('#input-box').value)}>ADD TASK</button>
+        <button id = "addButton" onClick={()=>todo('addItem', document.querySelector('#inputBox').value)}>ADD TASK</button>
         <div>
-            <button className = "t-buttons" onClick={() => todo('clearList')}>Clear List</button>
-            <button className = "t-buttons" onClick={() => todo('sortAsc')}>Sort By Ascending Order</button>
-            <button className = "t-buttons" onClick={() => todo('sortDesc')}>Sort By Descending Order</button>
-            <button className = "t-buttons" onClick={() => todo('sortNotDone')}>Tasks to be Completed</button>
+            <button className = "miscButtons" onClick={() => todo('clearList')}>Clear List</button>
+            <button className = "miscButtons" onClick={() => todo('sortAsc')}>Sort By Ascending Order</button>
+            <button className = "miscButtons" onClick={() => todo('sortDesc')}>Sort By Descending Order</button>
+            <button className = "miscButtons" onClick={() => todo('sortNotDone')}>Tasks to be Completed</button>
         </div>
     </div>
   )

@@ -1,7 +1,7 @@
 
 # How to run the application
 - npm install 
-- npm run build, the application will open automatically on localhost:8080
+- npm start, the application will open automatically on localhost:8080
 
 
 # How to test

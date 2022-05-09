@@ -12,8 +12,8 @@
   "main": "list.js",
   "scripts": {
     "test": "jest test.js",
-    "start": "npm run build && npm run open",
-    "build": "webpack serve --open"
+    "start": "webpack serve --open",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",

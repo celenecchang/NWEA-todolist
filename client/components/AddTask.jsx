@@ -19,12 +19,12 @@ const AddTask = (props) =>{
         <input  id = "inputBox"
         type = "text"
         />
-        <button id = "addButton" onClick={()=>todo('addItem', document.querySelector('#inputBox').value)}>ADD TASK</button>
+        <button id = "addButton" onClick={()=>todo("addItem", document.querySelector("#inputBox").value)}>ADD TASK</button>
         <div>
-            <button className = "miscButtons" onClick={() => todo('clearList')}>Clear List</button>
-            <button className = "miscButtons" onClick={() => todo('sortAsc')}>Sort By Ascending Order</button>
-            <button className = "miscButtons" onClick={() => todo('sortDesc')}>Sort By Descending Order</button>
-            <button className = "miscButtons" onClick={() => todo('sortNotDone')}>Tasks to be Completed</button>
+            <button className = "miscButtons" onClick={() => todo("clearList")}>Clear List</button>
+            <button className = "miscButtons" onClick={() => todo("sortAsc")}>Sort By Ascending Order</button>
+            <button className = "miscButtons" onClick={() => todo("sortDesc")}>Sort By Descending Order</button>
+            <button className = "miscButtons" onClick={() => todo("sortNotDone")}>Tasks to be Completed</button>
         </div>
     </div>
   )

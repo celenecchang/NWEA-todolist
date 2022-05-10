@@ -1,5 +1,4 @@
 
-
 #addTasks{
   text-align: center;
  
@@ -39,5 +38,8 @@ p {
   margin: 40px
 }
 
+.done {
+  color: red;
 
+}
 
